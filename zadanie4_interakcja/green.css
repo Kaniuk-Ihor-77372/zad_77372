@@ -45,3 +45,14 @@ footer {
     color: white;
     padding: 15px;
 }
+button {
+    font-size: 18px;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    background-color: #009933;
+    color: white;
+}
