@@ -45,3 +45,9 @@ footer {
     color: white;
     padding: 15px;
 }
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
