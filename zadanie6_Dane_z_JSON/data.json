@@ -1,0 +1,16 @@
+{
+  "umiejetnosci": [
+    "C# (podstawy)",
+    "HTML (podstawy)",
+    "JavaScript (podstawy)",
+    "MSSQL (podstawy)",
+    "Blender (podstawy)"
+  ],
+  "projekty": [
+    "Kalkulator indywidualny",
+    "Analizator indywidualny",
+    "Automat vendingowy",
+    "Baza danych siłownia",
+    "Donut w Blenderze"
+  ]
+}
