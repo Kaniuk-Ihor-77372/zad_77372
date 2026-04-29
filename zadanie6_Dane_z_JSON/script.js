@@ -50,3 +50,26 @@ function validateForm() {
     alert("Formularz wysłany poprawnie!");
     return true;
 }
+fetch("data.json")
+    .then(response => response.json())
+    .then(data => {
+
+  
+        let skillsList = document.getElementById("skills");
+
+        data.umiejetnosci.forEach(skill => {
+            let li = document.createElement("li");
+            li.textContent = skill;
+            skillsList.appendChild(li);
+        });
+    
+        let projectList = document.getElementById("projects");
+
+        data.projekty.forEach(project => {
+            let li = document.createElement("li");
+            li.textContent = project;
+            projectList.appendChild(li);
+        });
+
+    })
+    .catch(error => console.log("Błąd:", error));
