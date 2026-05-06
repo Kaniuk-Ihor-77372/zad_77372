@@ -11,17 +11,11 @@
 
     <header>
         <h1>Ihor Kaniuk</h1>
-
-        <img src="my_photo.jpg" alt="Moje zdjęcie">
+        <img src="my_photo.jpg" alt="Moje zdjęcie" />
 
         <div>
-            <button onclick="changeTheme()">
-                Zmień motyw
-            </button>
-
-            <button onclick="toggleSection()">
-                Ukryj / Pokaż projekty
-            </button>
+            <button onclick="changeTheme()">Zmień motyw</button>
+            <button onclick="toggleSection()">Ukryj / Pokaż projekty</button>
         </div>
     </header>
 
@@ -52,17 +46,28 @@
                     Kaniuk-Ihor-77372
                 </a>
             </p>
+
+            <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/">
+                    Ihor Kaniuk
+                </a>
+            </p>
         </section>
 
         <section>
             <h2>O mnie</h2>
 
             <p>
-                Jestem studentem uczelni Vistula na kierunku Informatyka.
+                Jestem studentem uczelni Vistula na kierunku Informatyka (2 semestr).
             </p>
 
             <p>
-                Interesuję się programowaniem i frontendem.
+                Interesuję się programowaniem i chcę rozwijać się jako programista backend.
+            </p>
+
+            <p>
+                Aktualnie uczę się podstaw technologii webowych oraz języków programowania.
             </p>
         </section>
 
@@ -83,7 +88,11 @@
                 <p>2 semestr</p>
 
                 <p>
-                    Realizacja projektów programistycznych.
+                    Realizacja 3 projektów programistycznych w języku C#.
+                </p>
+
+                <p>
+                    Nauka podstaw programowania i logiki.
                 </p>
             </article>
 
@@ -93,7 +102,11 @@
                 <p>2026 – obecnie</p>
 
                 <p>
-                    Nauka HTML, CSS i JavaScript.
+                    Nauka HTML, C# oraz JavaScript.
+                </p>
+
+                <p>
+                    Rozwijanie umiejętności frontend i backend.
                 </p>
             </article>
         </section>
@@ -103,7 +116,7 @@
 
             <p>Szkoła Podstawowa Rosilna</p>
             <p>Liceum Rosilna</p>
-            <p>Akademia Finansów i Biznesu Vistula</p>
+            <p>Obecnie uczę się w Akademii Finansów i Biznesu Vistula</p>
         </section>
 
         <section id="projekty">
@@ -111,6 +124,8 @@
 
             <ul id="projects"></ul>
         </section>
+
+        <!-- NOWA SEKCJA LOCAL STORAGE -->
 
         <section>
             <h2>Dodaj nowy projekt</h2>
@@ -162,7 +177,7 @@
 
             </form>
 
-            <p id="error"></p>
+            <p id="error" style="color:red;"></p>
         </section>
 
     </main>
