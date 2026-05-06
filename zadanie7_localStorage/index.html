@@ -11,11 +11,17 @@
 
     <header>
         <h1>Ihor Kaniuk</h1>
-        <img src="my_photo.jpg" alt="Moje zdjęcie" />
+
+        <img src="my_photo.jpg" alt="Moje zdjęcie">
 
         <div>
-            <button onclick="changeTheme()">Zmień motyw</button>
-            <button onclick="toggleSection()">Ukryj / Pokaż projekty</button>
+            <button onclick="changeTheme()">
+                Zmień motyw
+            </button>
+
+            <button onclick="toggleSection()">
+                Ukryj / Pokaż projekty
+            </button>
         </div>
     </header>
 
@@ -24,13 +30,15 @@
         <section>
             <h2>Kontakt</h2>
 
-            <p>Email:
+            <p>
+                Email:
                 <a href="mailto:ikaniuk1@stu.vistula.edu.pl">
                     ikaniuk1@stu.vistula.edu.pl
                 </a>
             </p>
 
-            <p>Telefon:
+            <p>
+                Telefon:
                 <a href="tel:+48880514328">
                     +48 880 514 328
                 </a>
@@ -44,13 +52,6 @@
                     Kaniuk-Ihor-77372
                 </a>
             </p>
-
-            <p>
-                LinkedIn:
-                <a href="https://www.linkedin.com/" target="_blank">
-                    Ihor Kaniuk
-                </a>
-            </p>
         </section>
 
         <section>
@@ -62,10 +63,6 @@
 
             <p>
                 Interesuję się programowaniem i frontendem.
-            </p>
-
-            <p>
-                Uczę się HTML, CSS, JavaScript oraz C#.
             </p>
         </section>
 
@@ -86,7 +83,7 @@
                 <p>2 semestr</p>
 
                 <p>
-                    Realizacja projektów programistycznych w języku C#.
+                    Realizacja projektów programistycznych.
                 </p>
             </article>
 
@@ -96,7 +93,7 @@
                 <p>2026 – obecnie</p>
 
                 <p>
-                    Nauka HTML, CSS oraz JavaScript.
+                    Nauka HTML, CSS i JavaScript.
                 </p>
             </article>
         </section>
@@ -118,9 +115,10 @@
         <section>
             <h2>Dodaj nowy projekt</h2>
 
-            <input type="text"
-                   id="newProject"
-                   placeholder="Nazwa projektu">
+            <input
+                type="text"
+                id="newProject"
+                placeholder="Nazwa projektu">
 
             <button onclick="addProject()">
                 Dodaj projekt
@@ -143,22 +141,28 @@
             <form onsubmit="return validateForm()">
 
                 <label>Imię:</label><br>
+
                 <input type="text" id="imie"><br><br>
 
                 <label>Nazwisko:</label><br>
+
                 <input type="text" id="nazwisko"><br><br>
 
                 <label>Email:</label><br>
+
                 <input type="text" id="email"><br><br>
 
                 <label>Wiadomość:</label><br>
+
                 <textarea id="wiadomosc"></textarea><br><br>
 
-                <button type="submit">Wyślij</button>
+                <button type="submit">
+                    Wyślij
+                </button>
 
             </form>
 
-            <p id="error" style="color:red;"></p>
+            <p id="error"></p>
         </section>
 
     </main>
