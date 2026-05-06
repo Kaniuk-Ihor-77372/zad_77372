@@ -1,45 +1,71 @@
 body {
     background-color: #e6ffe6;
-    font-family: Arial, sans-serif;
-    padding: 20px;
+    font-family: Verdana, sans-serif; 
+    margin: 0;
 }
 
 header {
+    background-color: #009933;
+    color: white;
     text-align: center;
+    padding: 30px; 
 }
 
-img {
-    width: 150px;
-    border-radius: 10px;
+header img {
+    width: 140px; 
+    border-radius: 20%; 
+    margin-top: 10px;
+    border: 4px dashed white;
+}
+
+main {
+    padding: 25px;
 }
 
 section {
-    background-color: white;
-    padding: 20px;
+    background-color: #f0fff0;
+    border: 2px dashed #009933; 
     margin-bottom: 20px;
-    border-radius: 10px;
+    padding: 20px;
+}
+
+h2 {
+    color: #006622;
+    font-size: 26px; 
+}
+
+a {
+    color: #009933;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    background-color: #009933;
+    color: white;
+    padding: 15px;
+}
+button {
+    font-size: 18px;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    background-color: #009933;
+    color: white;
+}
+form {
+    margin-top: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
 }
 
 button {
     padding: 10px 20px;
-    margin: 10px;
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 8px;
-}
-
-#error {
-    color: red;
-}
-
-#newProject {
-    width: 250px;
 }
