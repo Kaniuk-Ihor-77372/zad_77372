@@ -1,4 +1,4 @@
-
+alert("SCRIPT WORKS");
 const firebaseConfig = {
 
     apiKey: "AIzaSyCND_bA_up1wej3tDe0JlqxQW7i7tMWC3w",
