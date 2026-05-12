@@ -21,9 +21,9 @@ const firebaseConfig = {
 
     projectId: "zadanie8-f779b",
 
-    storageBucket:
-    "zadanie8-f779b.firebasestorage.app",
-
+  storageBucket:
+"zadanie8-f779b.appspot.com"
+      
     messagingSenderId: "846242229757",
 
     appId:
