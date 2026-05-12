@@ -22,6 +22,7 @@ const firebaseConfig = {
 };
 
 
+
 firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
@@ -48,6 +49,7 @@ window.changeTheme = function () {
         currentTheme = "green";
     }
 };
+
 
 
 
@@ -87,7 +89,6 @@ window.validateForm = function () {
 
     error.innerHTML = "";
 
-
     if (
         imie === "" ||
         nazwisko === "" ||
@@ -101,7 +102,6 @@ window.validateForm = function () {
         return false;
     }
 
-
     if (
         /\d/.test(imie) ||
         /\d/.test(nazwisko)
@@ -112,7 +112,6 @@ window.validateForm = function () {
 
         return false;
     }
-
 
     if (
         !email.includes("@") ||
@@ -127,7 +126,6 @@ window.validateForm = function () {
 
     return true;
 };
-
 
 
 
@@ -161,14 +159,21 @@ window.sendToFirebase = function () {
                 "Dane zapisane poprawnie!"
             );
 
-            document.querySelector("form").reset();
+            // RESET FORMULARZA
+            document.getElementById("imie").value = "";
+
+            document.getElementById("nazwisko").value = "";
+
+            document.getElementById("email").value = "";
+
+            document.getElementById("wiadomosc").value = "";
+
+            document.getElementById("error").innerHTML = "";
         })
 
         .catch((error) => {
 
             console.log(error);
-
-            alert("Błąd Firebase!");
         });
 };
 
@@ -180,6 +185,7 @@ fetch("data.json")
 
     .then(data => {
 
+     
         let skillsList =
             document.getElementById("skills");
 
@@ -193,6 +199,7 @@ fetch("data.json")
             skillsList.appendChild(li);
         });
 
+   
         let projectsList =
             document.getElementById("projects");
 
