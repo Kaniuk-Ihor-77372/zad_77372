@@ -1,4 +1,4 @@
-alert("SCRIPT WORKS");
+
 const firebaseConfig = {
 
     apiKey: "AIzaSyCND_bA_up1wej3tDe0JlqxQW7i7tMWC3w",
@@ -22,9 +22,9 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-const database = getDatabase(app);
+const database = firebase.database();
 
 
 
@@ -67,6 +67,7 @@ window.toggleSection = function () {
 };
 
 
+
 window.validateForm = function () {
 
     let imie =
@@ -86,7 +87,7 @@ window.validateForm = function () {
 
     error.innerHTML = "";
 
-   
+
     if (
         imie === "" ||
         nazwisko === "" ||
@@ -100,7 +101,7 @@ window.validateForm = function () {
         return false;
     }
 
-   
+
     if (
         /\d/.test(imie) ||
         /\d/.test(nazwisko)
@@ -129,6 +130,7 @@ window.validateForm = function () {
 
 
 
+
 window.sendToFirebase = function () {
 
     if (!validateForm()) {
@@ -151,7 +153,7 @@ window.sendToFirebase = function () {
             document.getElementById("wiadomosc").value
     };
 
-    push(ref(database, "messages"), data)
+    firebase.database().ref("messages").push(data)
 
         .then(() => {
 
@@ -171,6 +173,7 @@ window.sendToFirebase = function () {
 };
 
 
+
 fetch("data.json")
 
     .then(response => response.json())
@@ -188,5 +191,18 @@ fetch("data.json")
             li.textContent = skill;
 
             skillsList.appendChild(li);
+        });
+
+        let projectsList =
+            document.getElementById("projects");
+
+        data.projekty.forEach(project => {
+
+            let li =
+                document.createElement("li");
+
+            li.textContent = project;
+
+            projectsList.appendChild(li);
         });
     });
