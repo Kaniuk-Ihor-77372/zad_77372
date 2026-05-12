@@ -1,4 +1,3 @@
-
 import { initializeApp }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
@@ -21,9 +20,9 @@ const firebaseConfig = {
 
     projectId: "zadanie8-f779b",
 
-  storageBucket:
-"zadanie8-f779b.appspot.com"
-      
+    storageBucket:
+    "zadanie8-f779b.appspot.com",
+
     messagingSenderId: "846242229757",
 
     appId:
@@ -78,7 +77,6 @@ window.toggleSection = function () {
 };
 
 
-
 window.validateForm = function () {
 
     let imie =
@@ -98,6 +96,7 @@ window.validateForm = function () {
 
     error.innerHTML = "";
 
+   
     if (
         imie === "" ||
         nazwisko === "" ||
@@ -111,6 +110,7 @@ window.validateForm = function () {
         return false;
     }
 
+   
     if (
         /\d/.test(imie) ||
         /\d/.test(nazwisko)
@@ -121,6 +121,7 @@ window.validateForm = function () {
 
         return false;
     }
+
 
     if (
         !email.includes("@") ||
@@ -174,9 +175,10 @@ window.sendToFirebase = function () {
         .catch((error) => {
 
             console.log(error);
+
+            alert("Błąd Firebase!");
         });
 };
-
 
 
 fetch("data.json")
