@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
-    <title>CV - Student Informatyki</title>
 
-    <link id="theme" rel="stylesheet" href="green.css">
+    <title>
+        CV - Student Informatyki
+    </title>
+
+    <link
+        id="theme"
+        rel="stylesheet"
+        href="green.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Ihor Kaniuk</h1>
-        <img src="my_photo.jpg" alt="Moje zdjęcie" />
+
+        <h1>
+            Ihor Kaniuk
+        </h1>
+
+        <img
+            src="my_photo.jpg"
+            alt="Moje zdjęcie">
 
         <div>
-            <button onclick="changeTheme()">Zmień motyw</button>
-            <button onclick="toggleSection()">Ukryj / Pokaż projekty</button>
+
+            <button onclick="changeTheme()">
+                Zmień motyw
+            </button>
+
+            <button onclick="toggleSection()">
+                Ukryj / Pokaż projekty
+            </button>
+
         </div>
+
     </header>
 
     <main>
 
         <section>
-            <h2>Kontakt</h2>
+
+            <h2>
+                Kontakt
+            </h2>
 
             <p>
                 Email:
+
                 <a href="mailto:ikaniuk1@stu.vistula.edu.pl">
                     ikaniuk1@stu.vistula.edu.pl
                 </a>
@@ -33,164 +58,159 @@
 
             <p>
                 Telefon:
+
                 <a href="tel:+48880514328">
                     +48 880 514 328
                 </a>
             </p>
 
-            <p>Miasto: Warszawa</p>
+            <p>
+                Miasto: Warszawa
+            </p>
 
             <p>
                 GitHub:
-                <a href="https://github.com/Kaniuk-Ihor-77372" target="_blank">
+
+                <a
+                    href="https://github.com/Kaniuk-Ihor-77372"
+                    target="_blank">
+
                     Kaniuk-Ihor-77372
                 </a>
             </p>
 
-            <p>
-                LinkedIn:
-                <a href="https://www.linkedin.com/">
-                    Ihor Kaniuk
-                </a>
-            </p>
         </section>
 
         <section>
-            <h2>O mnie</h2>
+
+            <h2>
+                O mnie
+            </h2>
 
             <p>
-                Jestem studentem uczelni Vistula na kierunku Informatyka (2 semestr).
+                Jestem studentem uczelni Vistula
+                na kierunku Informatyka.
             </p>
 
-            <p>
-                Interesuję się programowaniem i chcę rozwijać się jako programista backend.
-            </p>
-
-            <p>
-                Aktualnie uczę się podstaw technologii webowych oraz języków programowania.
-            </p>
         </section>
 
         <section>
-            <h2>Umiejętności</h2>
+
+            <h2>
+                Umiejętności
+            </h2>
 
             <ul id="skills"></ul>
+
         </section>
 
         <section>
-            <h2>Doświadczenie</h2>
 
-            <article>
-                <h3>Projekty uczelniane – C#</h3>
+            <h2>
+                Edukacja
+            </h2>
 
-                <p>Vistula University</p>
+            <p>
+                Akademia Finansów i Biznesu Vistula
+            </p>
 
-                <p>2 semestr</p>
-
-                <p>
-                    Realizacja 3 projektów programistycznych w języku C#.
-                </p>
-
-                <p>
-                    Nauka podstaw programowania i logiki.
-                </p>
-            </article>
-
-            <article>
-                <h3>Nauka własna</h3>
-
-                <p>2026 – obecnie</p>
-
-                <p>
-                    Nauka HTML, C# oraz JavaScript.
-                </p>
-
-                <p>
-                    Rozwijanie umiejętności frontend i backend.
-                </p>
-            </article>
-        </section>
-
-        <section>
-            <h2>Edukacja</h2>
-
-            <p>Szkoła Podstawowa Rosilna</p>
-            <p>Liceum Rosilna</p>
-            <p>Obecnie uczę się w Akademii Finansów i Biznesu Vistula</p>
         </section>
 
         <section id="projekty">
-            <h2>Projekty</h2>
+
+            <h2>
+                Projekty
+            </h2>
 
             <ul id="projects"></ul>
+
         </section>
 
-        
-
         <section>
-            <h2>Dodaj nowy projekt</h2>
+
+            <h2>
+                Formularz kontaktowy
+            </h2>
+
+            <label>
+                Imię:
+            </label>
+
+            <br>
 
             <input
                 type="text"
-                id="newProject"
-                placeholder="Nazwa projektu">
+                id="imie">
 
-            <button onclick="addProject()">
-                Dodaj projekt
+            <br><br>
+
+            <label>
+                Nazwisko:
+            </label>
+
+            <br>
+
+            <input
+                type="text"
+                id="nazwisko">
+
+            <br><br>
+
+            <label>
+                Email:
+            </label>
+
+            <br>
+
+            <input
+                type="text"
+                id="email">
+
+            <br><br>
+
+            <label>
+                Wiadomość:
+            </label>
+
+            <br>
+
+            <textarea
+                id="wiadomosc"></textarea>
+
+            <br><br>
+
+            <button onclick="sendToFirebase()">
+                Wyślij
             </button>
-        </section>
 
-        <section>
-            <h2>Języki</h2>
+            <p
+                id="error"
+                style="color:red;">
+            </p>
 
-            <ul>
-                <li>Ukraiński – native</li>
-                <li>Polski – komunikatywny</li>
-                <li>Angielski – podstawowy</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Formularz kontaktowy</h2>
-
-            <form onsubmit="return validateForm()">
-
-                <label>Imię:</label><br>
-
-                <input type="text" id="imie"><br><br>
-
-                <label>Nazwisko:</label><br>
-
-                <input type="text" id="nazwisko"><br><br>
-
-                <label>Email:</label><br>
-
-                <input type="text" id="email"><br><br>
-
-                <label>Wiadomość:</label><br>
-
-                <textarea id="wiadomosc"></textarea><br><br>
-
-               <button type="button" onclick="sendToFirebase()">
-                    Wyślij
-                </button>
-
-            </form>
-
-            <p id="error" style="color:red;"></p>
         </section>
 
     </main>
 
     <footer>
-        <p>© 2026</p>
+
+        <p>
+            © 2026
+        </p>
+
     </footer>
 
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
-<script src="script.js?v=5"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+
+
+    <script src="script.js?v=10"></script>
+
 </body>
-</html>
 
+</html>
