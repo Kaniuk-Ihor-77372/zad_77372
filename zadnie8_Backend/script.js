@@ -1,8 +1,47 @@
 
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    push
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyCND_bA_up1wej3tDe0JlqxQW7i7tMWC3w",
+
+    authDomain: "zadanie8-f779b.firebaseapp.com",
+
+    databaseURL:
+    "https://zadanie8-f779b-default-rtdb.europe-west1.firebasedatabase.app",
+
+    projectId: "zadanie8-f779b",
+
+    storageBucket:
+    "zadanie8-f779b.firebasestorage.app",
+
+    messagingSenderId: "846242229757",
+
+    appId:
+    "1:846242229757:web:d3b2f06065ecf182aebd94",
+
+    measurementId: "G-9YFDXX7MEW"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const database = getDatabase(app);
+
+
 
 let currentTheme = "green";
 
-function changeTheme() {
+window.changeTheme = function () {
 
     const theme =
         document.getElementById("theme");
@@ -19,10 +58,11 @@ function changeTheme() {
 
         currentTheme = "green";
     }
-}
+};
 
 
-function toggleSection() {
+
+window.toggleSection = function () {
 
     const section =
         document.getElementById("projekty");
@@ -35,10 +75,11 @@ function toggleSection() {
 
         section.style.display = "none";
     }
-}
+};
 
 
-function validateForm() {
+
+window.validateForm = function () {
 
     let imie =
         document.getElementById("imie").value;
@@ -92,10 +133,49 @@ function validateForm() {
         return false;
     }
 
-    alert("Formularz wysłany poprawnie!");
-
     return true;
-}
+};
+
+
+
+window.sendToFirebase = function () {
+
+    if (!validateForm()) {
+
+        return;
+    }
+
+    const data = {
+
+        imie:
+            document.getElementById("imie").value,
+
+        nazwisko:
+            document.getElementById("nazwisko").value,
+
+        email:
+            document.getElementById("email").value,
+
+        wiadomosc:
+            document.getElementById("wiadomosc").value
+    };
+
+    push(ref(database, "messages"), data)
+
+        .then(() => {
+
+            alert(
+                "Dane zapisane poprawnie!"
+            );
+
+            document.querySelector("form").reset();
+        })
+
+        .catch((error) => {
+
+            console.log(error);
+        });
+};
 
 
 
@@ -118,73 +198,3 @@ fetch("data.json")
             skillsList.appendChild(li);
         });
     });
-
-
-
-let projects =
-    JSON.parse(
-        localStorage.getItem("projects")
-    ) || [];
-
-displayProjects();
-
-function addProject() {
-
-    let input =
-        document.getElementById("newProject");
-
-    let projectName = input.value;
-
-    if (projectName === "") {
-
-        alert("Wpisz nazwę projektu!");
-
-        return;
-    }
-
-    projects.push(projectName);
-
-    localStorage.setItem(
-        "projects",
-        JSON.stringify(projects)
-    );
-
-    displayProjects();
-
-    input.value = "";
-}
-
-function displayProjects() {
-
-    let projectList =
-        document.getElementById("projects");
-
-    projectList.innerHTML = "";
-
-    projects.forEach((project, index) => {
-
-        let li =
-            document.createElement("li");
-
-        li.innerHTML = `
-            ${project}
-            <button onclick="deleteProject(${index})">
-                Usuń
-            </button>
-        `;
-
-        projectList.appendChild(li);
-    });
-}
-
-function deleteProject(index) {
-
-    projects.splice(index, 1);
-
-    localStorage.setItem(
-        "projects",
-        JSON.stringify(projects)
-    );
-
-    displayProjects();
-}
