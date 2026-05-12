@@ -70,6 +70,7 @@ window.toggleSection = function () {
 
 
 
+
 window.validateForm = function () {
 
     let imie =
@@ -102,6 +103,7 @@ window.validateForm = function () {
         return false;
     }
 
+   
     if (
         /\d/.test(imie) ||
         /\d/.test(nazwisko)
@@ -129,6 +131,7 @@ window.validateForm = function () {
 
 
 
+
 window.sendToFirebase = function () {
 
     if (!validateForm()) {
@@ -153,13 +156,13 @@ window.sendToFirebase = function () {
 
     firebase.database().ref("messages").push(data)
 
-        .then(() => {
+        .then(function () {
 
             alert(
                 "Dane zapisane poprawnie!"
             );
 
-            // RESET FORMULARZA
+            
             document.getElementById("imie").value = "";
 
             document.getElementById("nazwisko").value = "";
@@ -169,13 +172,9 @@ window.sendToFirebase = function () {
             document.getElementById("wiadomosc").value = "";
 
             document.getElementById("error").innerHTML = "";
-        })
-
-        .catch((error) => {
-
-            console.log(error);
         });
 };
+
 
 
 
@@ -185,7 +184,7 @@ fetch("data.json")
 
     .then(data => {
 
-     
+      
         let skillsList =
             document.getElementById("skills");
 
@@ -199,7 +198,7 @@ fetch("data.json")
             skillsList.appendChild(li);
         });
 
-   
+    
         let projectsList =
             document.getElementById("projects");
 
